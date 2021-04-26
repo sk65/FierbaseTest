@@ -2,6 +2,7 @@ package com.example.fierbasenewaccaunt.view;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -11,6 +12,11 @@ import androidx.navigation.Navigation;
 
 import com.example.fierbasenewaccaunt.R;
 import com.example.fierbasenewaccaunt.viewmodel.UserViewModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         if (userViewModel.getCurrentUserId().getValue() != null) {
+            userViewModel.signInWithCustomToken(userViewModel.getCurrentUserId().getValue());
+
             adjustBackStack();
         }
     }

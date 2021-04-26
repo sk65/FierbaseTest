@@ -60,4 +60,8 @@ public class UserViewModel extends ViewModel implements SharedPreferences.OnShar
             currentUserId.setValue(sharedPreferencesManager.getCurrentUserId());
         }
     }
+
+    public void signInWithCustomToken(String userId) {
+        repository.signInWithCustomToken( userId);
+    }
 }

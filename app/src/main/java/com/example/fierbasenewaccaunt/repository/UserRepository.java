@@ -104,11 +104,25 @@ public class UserRepository {
 
     private void isEmailRegistered(String email, OnEmailCheckListener listener) {
         auth.fetchSignInMethodsForEmail(email).addOnCompleteListener(task ->
-                listener.onResult(!task.getResult().getSignInMethods().isEmpty()));
+                listener.onResult(!task.getResult().getSignInMethods().isEmpty()))
+                .addOnFailureListener(Throwable::printStackTrace);
     }
 
     public LiveData<Resource<FirebaseUser>> getFirebaseUserLiveData() {
         return firebaseUserLiveData;
+    }
+
+    public void signInWithCustomToken(String userId) {
+        firebaseUserLiveData.setValue(Resource.loading("Loading...", null));
+        auth.signInWithCustomToken(userId)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = auth.getCurrentUser();
+                        firebaseUserLiveData.setValue(Resource.success(user));
+                    } else {
+                        firebaseUserLiveData.setValue(Resource.error("Such email exists", null));
+                    }
+                });
     }
 
     private interface OnEmailCheckListener {
