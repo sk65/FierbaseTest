@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "519611039903",
+    "project_id": "fierbasenewaccaunt",
+    "storage_bucket": "fierbasenewaccaunt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519611039903:android:7557ebb38cbd39002ee2aa",
+        "android_client_info": {
+          "package_name": "com.example.fierbasenewaccaunt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519611039903-voo3aeuh2qfpd8nhlsnv1cf7eh3d3n3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0o4P2--MRuBd0wL_MY81ePqxHjsB7o-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519611039903-voo3aeuh2qfpd8nhlsnv1cf7eh3d3n3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

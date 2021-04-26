@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FierbaseNewAccaunt</string>
+    <string name="default_error_msg">Somethings went wrong :(</string>
+</resources>
